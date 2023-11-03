@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Facturación - Supermercado XYZ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2021/02/produce-department-in-a-supermarket.jpg'); /* Reemplaza 'url_de_la_imagen.jpg' con la URL de tu imagen de fondo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            background-color: #4CAF50; /* Verde para frutas y verduras */
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #menu {
+            display: flex;
+            padding: 0;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #fff; /* Cambiar el color a blanco */
+            margin-right: 20px;
+        }
+
+        #menu a:hover {
+            color: #F1F808;
+        }
+
+        #logo {
+            text-align: center;
+        }
+
+        #logo img {
+            display: block;
+            max-width: 150px;
+            margin-top: 20px; /* Mover el logo hacia arriba */
+            border-radius: 50%; /* Aplicar una forma circular */
+            overflow: hidden;
+        }
+
+        #store-name {
+            text-align: center;
+            font-family: "Gothic", sans-serif;
+            font-size: 48px; /* Tamaño de fuente más grande */
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #fff; /* Color de texto en blanco */
+        }
+
+        #options {
+            background-color: #4CAF50; /* Verde para resaltar los menús */
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        #options a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            font-weight: bold; /* Texto en negrita */
+            font-size: 18px;
+            transition: color 0.3s; /* Transición de color al pasar el cursor */
+        }
+
+        #options a:hover {
+            color: #007bff;
+        }
+
+        #store-name-selected {
+            background-color: #F90224 ; /* Fondo rojo oscuro para "MERKA FRUVER RC" */
+            color: #fff; /* Color de texto en blanco */
+        }
+
+        #invoice {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        #invoice table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #invoice th, #invoice td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        #invoice th {
+            background-color: #4CAF50; /* Verde para encabezados de tabla */
+            color: #fff;
+        }
+
+        #cancel-print {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div id="menu">
+        <a href="#">Bienvenido Roque Julio</a>
+        <a id="date">Fecha: </a>
+        <a id="time">Hora: </a>
+        <a href="#">Ayuda</a>
+        <a href="#">Salir</a>
+    </div>
+</div>
+
+<div id="logo">
+    <img src="https://png.pngtree.com/png-vector/20191113/ourlarge/pngtree-leaf-vector-logo-png-image_1986033.jpg" alt="Logo">
+</div>
+
+<div id="store-name" style="margin-top: 0;"> <!-- Mover "MERKA FRUVER RC" hacia arriba -->
+    <a id="store-name-selected">MERKA FRUVER RC</a>
+</div>
+
+<div id="options">
+    <a href="#">Inicio</a>
+    <a href="#">Ventas</a>
+    <a href="#">Inventario</a>
+    <a href="#">Clientes</a>
+    <a href="#">Reportes</a>
+    <a href="#">Administrador</a>
+    <a href="#">Factura de Compra</a>
+</div>
+
+<div id="invoice">
+    <h2>Factura de Compra</h2>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+            <td>Manzana</td>
+            <td>$1.000</td>
+            <td>5</td>
+            <td>$5.000</td>
+        </tr>
+        <tr>
+            <td>Mandarina</td>
+            <td>$9.00</td>
+            <td>9</td>
+            <td>$8.100</td>
+        </tr>
+        <tr>
+            <td>Banano</td>
+            <td>$1.000</td>
+            <td>5</td>
+            <td>$5.000</td>
+        </tr>
+        <tr>
+            <td>Tomate</td>
+            <td>$1.000</td>
+            <td>5</td>
+            <td>$5.000</td>
+        </tr>
+        <tr>
+            <td>Zanahoria</td>
+            <td>$1.000</td>
+            <td>5</td>
+            <td>$5.000</td>
+        </tr>
+        <tr>
+            <td>Piña</td>
+            <td>$1.000</td>
+            <td>5</td>
+            <td>$5.000</td>
+        </tr>
+    </table>
+
+    <h4>Total a pagar: $33.100</h4>
+
+    <h3>Detalles de Pago</h3>
+<div>
+    <input type="radio" id="pagoEfectivo" name="formaPago" value="efectivo">
+    <label for="pagoEfectivo">Pago en Efectivo</label>
+</div>
+<div>
+    <input type="radio" id="pagoTarjeta" name="formaPago" value="tarjeta">
+    <label for "pagoTarjeta">Tarjeta de Débito/Crédito</label>
+</div>
+<div>
+    <input type="radio" id="pagoNequi" name="formaPago" value="nequi">
+    <label for="pagoNequi">Pago Nequi</label>
+</div>
+
+    <div id="cancel-print">
+        <button>Cancelar</button>
+        <button>Imprimir</button>
+    </div>
+</div>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        const dateElement = document.getElementById("date");
+        const timeElement = document.getElementById("time");
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = "Fecha: " + now.toLocaleDateString("es-CO", options);
+        timeElement.textContent = "Hora: " + now.toLocaleTimeString("es-CO");
+    }
+
+    updateTime(); // Llamar a la función para mostrar la hora y fecha actual
+
+    // Actualizar la hora en tiempo real cada segundo
+    setInterval(updateTime, 1000);
+</script>
+</body>
+</html>

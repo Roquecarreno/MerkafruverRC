@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2021/02/produce-department-in-a-supermarket.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu {
+    display: flex;
+    padding: 0;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+#menu a:hover {
+    color: #F1F808;
+}
+
+#logo {
+    text-align: center;
+}
+
+#logo img {
+    display: block;
+    max-width: 150px;
+    margin-top: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#store-name {
+    text-align: center;
+    font-family: "Gothic", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#options {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+#options a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+#options a:hover {
+    color: #007bff;
+}
+
+#store-name-selected {
+    background-color: #F90224;
+    color: #fff;
+}
+
+#invoice {
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#invoice table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#invoice th, #invoice td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#invoice th {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#cancel-print {
+    text-align: center;
+    margin-top: 20px;
+}
